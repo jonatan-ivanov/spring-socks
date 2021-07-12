@@ -13,6 +13,7 @@ import reactor.core.publisher.Mono;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class HomeController {
@@ -23,8 +24,12 @@ public class HomeController {
 	}
 
 	@GetMapping(path = "/")
-	public String home(Model model, Cart cart) {
-		final Flux<SockResponse> socks = this.catalogClient.getSocksWithFallback(CatalogOrder.PRICE, 1, 6, List.of("featured"));
+	public String home(
+			Model model,
+			Cart cart,
+			@RequestParam(value = "debug", required = false, defaultValue = "false") boolean debug) {
+		int requestedSocks = debug ? -1 : 6;
+		final Flux<SockResponse> socks = this.catalogClient.getSocksWithFallback(CatalogOrder.PRICE, 1, requestedSocks, List.of("featured"));
 		final Mono<TagsResponse> tags = this.catalogClient.getTagsWithFallback();
 		model.addAttribute("socks", socks);
 		model.addAttribute("tags", tags);
