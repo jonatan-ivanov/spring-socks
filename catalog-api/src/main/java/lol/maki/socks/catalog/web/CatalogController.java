@@ -9,6 +9,7 @@ import lol.maki.socks.catalog.Tag;
 import lol.maki.socks.catalog.spec.CountResponse;
 import lol.maki.socks.catalog.spec.SockResponse;
 
+import org.springframework.cloud.sleuth.Tracer;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,9 +23,11 @@ import static java.util.stream.Collectors.toUnmodifiableList;
 @CrossOrigin
 public class CatalogController {
 	private final SockMapper sockMapper;
+	private final Tracer tracer;
 
-	public CatalogController(SockMapper sockMapper) {
+	public CatalogController(SockMapper sockMapper, Tracer tracer) {
 		this.sockMapper = sockMapper;
+		this.tracer = tracer;
 	}
 
 	@GetMapping(path = "/catalogue/{id}")
@@ -40,11 +43,18 @@ public class CatalogController {
 	}
 
 	@GetMapping(path = "/catalogue")
-	public ResponseEntity<List<SockResponse>> getSocks(@RequestParam(value = "order", required = false, defaultValue = "price") String order,
+	public ResponseEntity<List<SockResponse>> getSocks(
+			@RequestParam(value = "order", required = false, defaultValue = "price") String order,
 			@RequestParam(value = "page", required = false, defaultValue = "1") Integer page,
 			@RequestParam(value = "size", required = false, defaultValue = "10") Integer size,
 			@RequestParam(value = "tags", required = false) List<String> tags) {
-		final List<Sock> socks = this.sockMapper.findSocks(tags == null ? null : tags.stream().map(Tag::valueOf).collect(toUnmodifiableList()), order, page, size);
+		this.tracer.currentSpan()
+				.tag("order", order)
+				.tag("page", String.valueOf(page))
+				.tag("size", String.valueOf(size))
+				.tag("tags", String.valueOf(tags));
+
+		List<Sock> socks = this.sockMapper.findSocks(tags == null ? null : tags.stream().map(Tag::valueOf).collect(toUnmodifiableList()), order, page, size);
 		return ResponseEntity.ok(socks.stream().map(this::toResponse).collect(toUnmodifiableList()));
 	}
 
