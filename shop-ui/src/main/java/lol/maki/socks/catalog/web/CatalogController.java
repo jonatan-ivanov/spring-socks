@@ -15,6 +15,7 @@ import lol.maki.socks.catalog.client.TagsResponse;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
+import org.springframework.cloud.sleuth.Tracer;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 import org.springframework.http.CacheControl;
@@ -36,19 +37,30 @@ import static org.springframework.web.bind.annotation.RequestMethod.HEAD;
 @Controller
 public class CatalogController {
 	private final CatalogClient catalogClient;
+	private final Tracer tracer;
 
-	public CatalogController(CatalogClient catalogClient) {
+	public CatalogController(CatalogClient catalogClient, Tracer tracer) {
 		this.catalogClient = catalogClient;
+		this.tracer = tracer;
 	}
 
 	@GetMapping(path = "details/{id}")
-	public String details(@PathVariable("id") UUID id, Model model, Cart cart) {
-		final Mono<SockResponse> sock = this.catalogClient.getSockWithFallback(id);
-		final Flux<SockResponse> relatedProducts = sock.flatMapMany(s -> this.catalogClient.getSocksWithFallback(CatalogOrder.PRICE, 1, 4, s.getTag()));
-		final Mono<TagsResponse> tags = this.catalogClient.getTagsWithFallback();
+	public String details(
+			@PathVariable("id") UUID id,
+			Model model,
+			Cart cart,
+			@RequestParam(value = "devMode", required = false, defaultValue = "true") boolean devMode) {
+		this.tracer.currentSpan().tag("devMode", String.valueOf(devMode));
+		int requestedSocks = devMode ? 1234567890 : 4;
+		Mono<SockResponse> sock = this.catalogClient.getSockWithFallback(id);
 		model.addAttribute("sock", sock);
+
+		Flux<SockResponse> relatedProducts = sock.flatMapMany(s -> this.catalogClient.getSocksWithFallback(CatalogOrder.PRICE, 1, requestedSocks, s.getTag()));
 		model.addAttribute("relatedProducts", relatedProducts);
+
+		Mono<TagsResponse> tags = this.catalogClient.getTagsWithFallback();
 		model.addAttribute("tags", tags);
+
 		return "shop-details";
 	}
 
