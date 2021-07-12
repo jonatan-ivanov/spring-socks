@@ -2,7 +2,7 @@ CREATE TABLE IF NOT EXISTS sock
 (
     sock_id     VARCHAR(40) NOT NULL,
     name        VARCHAR(20),
-    description VARCHAR(200),
+    description LONGTEXT,
     price       DECIMAL(8, 2),
     count       INT,
     image_url_1 VARCHAR(40),
