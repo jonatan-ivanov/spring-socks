@@ -8,8 +8,7 @@ services:
         environment:
             MYSQL_ROOT_PASSWORD: password
         volumes:
-            - ./mysql/initdb:/docker-entrypoint-initdb.d
-            # - ./mysql/local-data:/var/lib/mysql
+            - ./integration-tests/mysql:/docker-entrypoint-initdb.d
         ports:
             - 3306:3306
 
