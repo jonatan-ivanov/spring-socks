@@ -20,7 +20,7 @@ public class SockGen {
 
 		String lipsum = Files.readString(DESCRIPTION_FILE);
 		String description = "";
-		for (int i = 0; i < 100; i++) {
+		for (int i = 0; i < 200; i++) {
 			description += lipsum;
 		}
 

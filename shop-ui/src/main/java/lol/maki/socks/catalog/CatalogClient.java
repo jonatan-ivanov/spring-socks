@@ -5,10 +5,13 @@ import java.util.List;
 import java.util.UUID;
 
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
+import io.github.resilience4j.timelimiter.annotation.TimeLimiter;
 import lol.maki.socks.catalog.client.SockResponse;
 import lol.maki.socks.catalog.client.TagsResponse;
 import lol.maki.socks.config.LoggingExchangeFilterFunction;
 import lol.maki.socks.config.SockProps;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
@@ -24,8 +27,9 @@ import static org.springframework.security.oauth2.client.web.reactive.function.c
 
 @Component
 public class CatalogClient {
-	private final WebClient webClient;
+	private final static Logger LOGGER = LoggerFactory.getLogger(CatalogClient.class);
 
+	private final WebClient webClient;
 	private final SockProps props;
 
 	private static final SockResponse fallbackSock = new SockResponse()
@@ -63,6 +67,7 @@ public class CatalogClient {
 	}
 
 	@CircuitBreaker(name = "catalog")
+	@TimeLimiter(name = "catalog")
 	public Flux<SockResponse> getSocks(CatalogOrder order, int page, int size, List<String> tags) {
 		return this.webClient.get()
 				.uri(props.getCatalogUrl(), b -> b.path("catalogue")
@@ -77,6 +82,7 @@ public class CatalogClient {
 	}
 
 	@CircuitBreaker(name = "catalog", fallbackMethod = "fallbackSocks")
+	@TimeLimiter(name = "catalog", fallbackMethod = "fallbackSocks")
 	public Flux<SockResponse> getSocksWithFallback(CatalogOrder order, int page, int size, List<String> tags) {
 		return this.getSocks(order, page, size, tags);
 	}
@@ -117,6 +123,7 @@ public class CatalogClient {
 	}
 
 	Flux<SockResponse> fallbackSocks(CatalogOrder order, int page, int size, List<String> tags, Throwable throwable) {
+		LOGGER.error("Unable to fetch socks", throwable);
 		return Flux.just(fallbackSock);
 	}
 
