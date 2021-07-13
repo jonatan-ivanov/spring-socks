@@ -8,6 +8,9 @@ import java.util.Optional;
 import java.util.Set;
 import java.util.UUID;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
@@ -20,10 +23,10 @@ import static java.util.stream.Collectors.toUnmodifiableList;
 
 @Repository
 public class SockMapper {
+	private static final Logger LOGGER = LoggerFactory.getLogger(SockMapper.class);
+
 	private final JdbcTemplate jdbcTemplate;
-
 	private final NamedParameterJdbcTemplate namedParameterJdbcTemplate;
-
 	private final Set<String> acceptedOrder = Set.of("sock_id", "name", "price");
 
 	private final RowMapper<Sock> sockBuilderRowMapper = (rs, i) -> new Sock(
@@ -60,6 +63,7 @@ public class SockMapper {
 	}
 
 	public List<Sock> findSocks(List<Tag> tags, String order, int page, int size) {
+		LOGGER.info("Fetching socks from the DB...");
 		final MapSqlParameterSource source = new MapSqlParameterSource();
 		final StringBuilder sql = new StringBuilder(BASE_QUERY);
 		if (!CollectionUtils.isEmpty(tags)) {
@@ -81,7 +85,10 @@ public class SockMapper {
 					.append(" OFFSET ")
 					.append((page - 1) * size);
 		}
-		return this.namedParameterJdbcTemplate.query(sql.toString(), source, this.sockBuilderRowMapper);
+		List<Sock> socks = this.namedParameterJdbcTemplate.query(sql.toString(), source, this.sockBuilderRowMapper);
+		LOGGER.info("Socks retrieved from the DB...");
+
+		return socks;
 	}
 
 	public long countByTag(List<Tag> tags) {
