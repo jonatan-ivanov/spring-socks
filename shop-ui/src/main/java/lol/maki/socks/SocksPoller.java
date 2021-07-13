@@ -7,8 +7,8 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class SocksPoller {
-	@Scheduled(fixedRate = 10_000)
-	public void pollSocks() {
+	@Scheduled(fixedRate = 30_000)
+	public void socksPollerIgnoreMe() {
 		throw SockNotFoundException.ignoreMe();
 	}
 }
