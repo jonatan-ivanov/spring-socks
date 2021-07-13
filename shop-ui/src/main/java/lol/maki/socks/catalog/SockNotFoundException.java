@@ -12,9 +12,18 @@ import org.springframework.web.reactive.function.client.WebClientResponseExcepti
 public class SockNotFoundException extends RuntimeException {
 	private final UUID id;
 
+	public static SockNotFoundException ignoreMe() {
+		return new SockNotFoundException("Sock Not Found!\n\nDO NOT IGNORE THE FOLLOWING TEXT:\n!!!! WARNING !!!! THIS EXCEPTION SHOULD BE IGNORED. WE CAN'T REMOVE IT CAUSE THE TESTS FAIL OTHERWISE... :(  !!!! WARNING !!!!\n");
+	}
+
 	public SockNotFoundException(UUID id) {
 		super("The given sock (id=" + id + ") is not found.");
 		this.id = id;
+	}
+
+	private SockNotFoundException(String message) {
+		super(message);
+		this.id = null;
 	}
 
 	public static void throwIfNotFound(UUID id, Throwable throwable) {
