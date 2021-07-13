@@ -52,7 +52,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 						.mvcMatchers(GET, "/customers/**").access("hasRole('TRUSTED_CLIENT') and hasAuthority('SCOPE_customer:read')")
 						.mvcMatchers(POST, "/customers").access("hasRole('TRUSTED_CLIENT') and hasAuthority('SCOPE_customer:write')")
 						.mvcMatchers(POST, "/addresses", "/cards").hasAnyAuthority("SCOPE_customer:write")
-						.requestMatchers(EndpointRequest.to("info", "health", "prometheus")).permitAll()
+						.requestMatchers(EndpointRequest.to("info", "health", "prometheus", "metrics")).permitAll()
 						.anyRequest().authenticated())
 				.oauth2ResourceServer(r -> r.jwt(jwt -> {
 					final JwtAuthenticationConverter jwtAuthenticationConverter = new JwtAuthenticationConverter();

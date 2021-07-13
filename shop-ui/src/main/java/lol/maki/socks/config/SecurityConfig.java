@@ -56,7 +56,7 @@ public class SecurityConfig {
 				.addFilterAt(new LoginPageWebFilter(), SecurityWebFiltersOrder.LOGIN_PAGE_GENERATING)
 				.authorizeExchange(exchanges -> exchanges
 						.matchers(PathRequest.toStaticResources().atCommonLocations()).permitAll()
-						.matchers(EndpointRequest.to("health", "info", "prometheus")).permitAll()
+						.matchers(EndpointRequest.to("health", "info", "prometheus", "metrics")).permitAll()
 						.anyExchange().permitAll()
 				)
 				.oauth2Login(oauth2 -> {

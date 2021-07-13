@@ -21,7 +21,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 		http
 				.authorizeRequests(authorizeRequests -> authorizeRequests
-						.requestMatchers(EndpointRequest.to("info", "health", "prometheus")).permitAll()
+						.requestMatchers(EndpointRequest.to("info", "health", "prometheus", "metrics")).permitAll()
 						.mvcMatchers(HttpMethod.GET, "orders").access("hasRole('TRUSTED_CLIENT') and hasAuthority('SCOPE_order:read')")
 						.mvcMatchers(HttpMethod.GET, "orders/**").hasAnyAuthority("SCOPE_order:read")
 						.mvcMatchers(HttpMethod.POST, "orders/**").hasAnyAuthority("SCOPE_order:write")

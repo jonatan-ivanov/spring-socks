@@ -21,7 +21,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 		http
 				.authorizeRequests(authorizeRequests -> authorizeRequests
-						.requestMatchers(EndpointRequest.to("info", "health", "prometheus")).permitAll()
+						.requestMatchers(EndpointRequest.to("info", "health", "prometheus", "metrics")).permitAll()
 						.mvcMatchers(HttpMethod.GET, "carts/*/merge").access("hasRole('TRUSTED_CLIENT') and hasAuthority('SCOPE_cart:write')")
 						.mvcMatchers(HttpMethod.POST, "carts/**").access("hasRole('TRUSTED_CLIENT') and hasAuthority('SCOPE_cart:write')")
 						.mvcMatchers(HttpMethod.PATCH, "carts/**").access("hasRole('TRUSTED_CLIENT') and hasAuthority('SCOPE_cart:write')")

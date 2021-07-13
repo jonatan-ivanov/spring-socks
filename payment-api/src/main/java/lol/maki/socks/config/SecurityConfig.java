@@ -12,7 +12,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 		http
 				.authorizeRequests(authorizeRequests -> authorizeRequests
-						.requestMatchers(EndpointRequest.to("info", "health", "prometheus")).permitAll()
+						.requestMatchers(EndpointRequest.to("info", "health", "prometheus", "metrics")).permitAll()
 						.mvcMatchers(HttpMethod.POST, "paymentAuth").hasAuthority("SCOPE_payment:auth")
 						.anyRequest().authenticated()
 				)
