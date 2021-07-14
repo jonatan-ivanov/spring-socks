@@ -8,9 +8,11 @@ import java.util.Optional;
 import java.util.Set;
 import java.util.UUID;
 
+import io.micrometer.core.annotation.Timed;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import org.springframework.cloud.sleuth.annotation.NewSpan;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
@@ -62,6 +64,8 @@ public class SockMapper {
 		}
 	}
 
+	@Timed
+	@NewSpan("catalog-db-find-socks")
 	public List<Sock> findSocks(List<Tag> tags, String order, int page, int size) {
 		LOGGER.info("Fetching socks from the DB...");
 		final MapSqlParameterSource source = new MapSqlParameterSource();
