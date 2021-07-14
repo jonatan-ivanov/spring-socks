@@ -13,7 +13,7 @@
 			<token>${LOGZ_IO_API_TOKEN}</token>
 			<logzioUrl>https://listener.logz.io:8071</logzioUrl>
 			<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
-				<level>INFO</level>
+				<level>DEBUG</level>
 			</filter>
 			<debug>true</debug>
 			<encoder class="net.logstash.logback.encoder.LoggingEventCompositeJsonEncoder">
