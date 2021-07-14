@@ -2,15 +2,33 @@
 
 ![Spring Socks](shop-ui/src/main/resources/static/img/logo.png)
 
- [![integration-tests](https://github.com/making/spring-socks/workflows/integration-tests/badge.svg)](https://github.com/making/spring-socks/actions?query=workflow%3Aintegration-tests)
-
-Spring Version of https://microservices-demo.github.io
-
-Live Demo: https://spring-socks.apps.pcfone.io 
+Slow version of https://github.com/making/spring-socks
 
 <img src="https://user-images.githubusercontent.com/106908/95973135-3ab35000-0e4e-11eb-9267-00ab2bee3c5f.png" width="800px">
 
-## How to run Spring Socks
+## Why is it slow?
+
+The goal of this project is simulating production issues so parts of the web app are artificially and ridiculously slow. There is one slow operation that is used in multiple places in the app: querying multiple products from the Catalog DB.
+
+We did not introduce this artificial slowness by using `Thread::sleep` or any latency-proxy. The cause of the slowness is the lack of pagination (SQL `LIMIT`) and the amount of data in the DB. The `SockGen` class generates a DB migration script with a few products (5) that have quite big description fields (~20MiB). When somebody queries these products, the query will be quite slow (~5sec) because of the huge amout of data (~100MiB). Normally, with pagination these records are not queried because the query is ordered by price and we made these records quite expensive, so normally they are not returned. If somebody fetches all the records, these will be in the result too, so the query becomes slow.
+
+## How to run Spring Socks locally
+
+1. Run `docker-compose up` in the project's root directory  
+   This should start MySQL, Adminer, and Zipkin
+1. `export WAVEFRONT_API_TOKEN=...`
+1. `export LOGZ_IO_API_TOKEN=...`
+1. `idea .` (imports the project keeping the environment variables set)
+1. Execute `SockGen` which should create a migration script in `catalog-api/src/main/resources/db/migration` named `V5__add_looong_socks.sql`
+Do not open this file as its size should be around 100MiB.
+1. Start `UserApiApplication`
+1. Start the rest of the applications except `ShopUiApplication`: `CartApiApplication`, `CatalogApiApplication`, `OrderApiApplication`, `PaymentApiApplication`, `ShippingApiApplication`
+1. Start `ShopUiApplication`
+1. `http://localhost`
+
+If you want the app to be fast for the next request: `http://localhost/?devMode=false`
+
+## Other How to run examples
 
 * [How to run Spring Socks with Docker Compose](docs/docker-compose.md)
 * [How to deploy Spring Socks on Kubernetes](docs/k8s.md)
