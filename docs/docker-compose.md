@@ -45,7 +45,7 @@ $ ./integration-tests/run-tests-for-docker.sh
 [INFO] Scanning for projects...
 [INFO] 
 [INFO] ------------------< lol.maki.socks:integration-tests >------------------
-[INFO] Building integration-tests 0.0.1-SNAPSHOT
+[INFO] Building integration-tests 1.0.0-SPRING_ONE
 [INFO] --------------------------------[ jar ]---------------------------------
 [INFO] 
 [INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ integration-tests ---

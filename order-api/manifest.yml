@@ -1,6 +1,6 @@
 applications:
 - name: sock-order
-  path: target/order-api-0.0.1-SNAPSHOT.jar
+  path: target/order-api-1.0.0-SPRING_ONE.jar
   memory: 384m
   health-check-type: http
   health-check-http-endpoint: /actuator/health/readiness

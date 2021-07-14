@@ -5,7 +5,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>lol.maki</groupId>
 	<artifactId>user-spec</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0-SPRING_ONE</version>
 	<name>user-spec</name>
 	<description>User API Spec</description>
 	<properties>

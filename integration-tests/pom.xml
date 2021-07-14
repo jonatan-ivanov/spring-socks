@@ -6,18 +6,18 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.4.1</version>
+		<version>2.5.2</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>lol.maki.socks</groupId>
 	<artifactId>integration-tests</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0-SPRING_ONE</version>
 	<name>integration-tests</name>
 	<description>Integation Tests for Spring Sock Shop</description>
 
 	<properties>
 		<java.version>11</java.version>
-		<spring-cloud.version>2020.0.0-RC1</spring-cloud.version>
+		<spring-cloud.version>2020.0.3</spring-cloud.version>
 	</properties>
 
 	<dependencies>
