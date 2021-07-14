@@ -53,10 +53,10 @@ mkdir -p target
 
 echo -e "\nStarting the apps..."
 nohup ${JAVA} ${MEM_ARGS} -jar user-api/target/*.jar --debug --server.port="${USER_API_PORT}" ${TOKENS} > target/user-api.log 2>&1 &
-echo "Waiting for the user-api to start"
+echo -e "\nWaiting for the user-api to start"
 check_app "${USER_API_PORT}"
 
-echo "Starting the rest of the apps"
+echo -e "\nStarting the rest of the apps"
 nohup ${JAVA} ${MEM_ARGS} -jar cart-api/target/*.jar --debug --server.port="${CART_API_PORT}" ${TOKENS} > target/cart-api.log 2>&1 &
 nohup ${JAVA} ${MEM_ARGS} -jar catalog-api/target/*.jar --debug --server.port="${CATALOG_API_PORT}" ${TOKENS} > target/catalog-api.log 2>&1 &
 nohup ${JAVA} ${MEM_ARGS} -jar order-api/target/*.jar --debug --server.port="${ORDER_API_PORT}" ${TOKENS} > target/order-api.log 2>&1 &
