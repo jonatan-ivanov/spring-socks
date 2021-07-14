@@ -51,10 +51,16 @@ function curl_health_endpoint() {
 
 mkdir -p target
 
+echo -e "\nRemoving the magical logzio folder"
+rm -rf /tmp/logzio-logback-queue
+
 echo -e "\nStarting the apps..."
 nohup ${JAVA} ${MEM_ARGS} -jar user-api/target/*.jar --debug --server.port="${USER_API_PORT}" ${TOKENS} > target/user-api.log 2>&1 &
 echo -e "\nWaiting for the user-api to start"
 check_app "${USER_API_PORT}"
+
+echo -e "\nRemoving the magical logzio folder"
+rm -rf /tmp/logzio-logback-queue
 
 echo -e "\nStarting the rest of the apps"
 nohup ${JAVA} ${MEM_ARGS} -jar cart-api/target/*.jar --debug --server.port="${CART_API_PORT}" ${TOKENS} > target/cart-api.log 2>&1 &
@@ -63,12 +69,18 @@ nohup ${JAVA} ${MEM_ARGS} -jar order-api/target/*.jar --debug --server.port="${O
 nohup ${JAVA} ${MEM_ARGS} -jar payment-api/target/*.jar --debug --server.port="${PAYMENT_API_PORT}" ${TOKENS} > target/payment-api.log 2>&1 &
 nohup ${JAVA} ${MEM_ARGS} -jar shipping-api/target/*.jar --debug --server.port="${SHIPPING_API_PORT}" ${TOKENS} > target/shipping-api.log 2>&1 &
 
+echo -e "\nRemoving the magical logzio folder"
+rm -rf /tmp/logzio-logback-queue
+
 echo -e "\n\nWaiting for all apps but UI to start\n\n"
 check_app "${CART_API_PORT}"
 check_app "${CATALOG_API_PORT}"
 check_app "${ORDER_API_PORT}"
 check_app "${PAYMENT_API_PORT}"
 check_app "${SHIPPING_API_PORT}"
+
+echo -e "\nRemoving the magical logzio folder"
+rm -rf /tmp/logzio-logback-queue
 
 echo -e "\n\nWaiting for UI to start\n\n"
 nohup ${JAVA} ${MEM_ARGS} -jar shop-ui/target/*.jar --debug --server.port="${SHOP_UI_PORT}" ${TOKENS} > target/shop-ui.log 2>&1 &
