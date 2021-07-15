@@ -5,7 +5,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>lol.maki</groupId>
 	<artifactId>shipping-spec</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0-SPRING_ONE</version>
 	<name>shipping-spec</name>
 	<description>Shipping API Spec</description>
 	<properties>

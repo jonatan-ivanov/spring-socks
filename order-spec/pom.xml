@@ -5,7 +5,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>lol.maki</groupId>
 	<artifactId>order-spec</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0-SPRING_ONE</version>
 	<name>order-spec</name>
 	<description>Order API Spec</description>
 	<properties>

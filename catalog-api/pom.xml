@@ -6,19 +6,19 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.4.2</version>
+		<version>2.5.2</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>lol.maki.socks.catalog</groupId>
 	<artifactId>catalog-api</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0-SPRING_ONE</version>
 	<name>catalog-api</name>
 	<description>Catalog API</description>
 
 	<properties>
 		<java.version>11</java.version>
-		<spring-cloud.version>2020.0.0</spring-cloud.version>
-		<wavefront.version>2.1.0-RC1</wavefront.version>
+		<spring-cloud.version>2020.0.3</spring-cloud.version>
+		<wavefront.version>2.2.0</wavefront.version>
 	</properties>
 
 	<dependencies>
@@ -87,10 +87,6 @@
 		<!--            <groupId>org.springframework.cloud</groupId>-->
 		<!--            <artifactId>spring-cloud-starter-loadbalancer</artifactId>-->
 		<!--        </dependency>-->
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-sleuth-zipkin</artifactId>
-		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-sleuth</artifactId>
@@ -183,6 +179,52 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
+
+	<profiles>
+		<profile>
+			<id>zipkin</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<dependencies>
+				<dependency>
+					<groupId>org.springframework.cloud</groupId>
+					<artifactId>spring-cloud-sleuth-zipkin</artifactId>
+				</dependency>
+			</dependencies>
+		</profile>
+		<profile>
+			<id>wavefront</id>
+			<dependencies>
+				<dependency>
+					<groupId>com.wavefront</groupId>
+					<artifactId>wavefront-spring-boot-starter</artifactId>
+				</dependency>
+			</dependencies>
+		</profile>
+		<profile>
+			<id>logzio</id>
+			<dependencies>
+				<dependency>
+					<groupId>io.logz.logback</groupId>
+					<artifactId>logzio-logback-appender</artifactId>
+					<version>v1.0.25</version>
+				</dependency>
+				<dependency>
+					<groupId>net.logstash.logback</groupId>
+					<artifactId>logstash-logback-encoder</artifactId>
+					<version>6.6</version>
+					<scope>runtime</scope>
+					<exclusions>
+						<exclusion>
+							<artifactId>logback-core</artifactId>
+							<groupId>ch.qos.logback</groupId>
+						</exclusion>
+					</exclusions>
+				</dependency>
+			</dependencies>
+		</profile>
+	</profiles>
 
 	<build>
 		<plugins>
