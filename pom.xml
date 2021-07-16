@@ -13,6 +13,7 @@
 	<description>Socks Parent</description>
 
 	<modules>
+		<module>socks-common</module>
 		<module>cart-api</module>
 		<module>catalog-api</module>
 		<module>order-api</module>
