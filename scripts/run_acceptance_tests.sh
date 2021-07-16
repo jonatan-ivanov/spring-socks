@@ -3,11 +3,11 @@
 set -o errexit
 
 DEFAULT_HEALTH_HOST=${DEFAULT_HEALTH_HOST:-localhost}
-SHOP_UI_PORT="${SHOP_UI_PORT:-8080}"
+SHOP_UI_PORT="${SHOP_UI_PORT:-80}"
 SHOP_UI_ADDRESS="${SHOP_UI_ADDRESS:-${DEFAULT_HEALTH_HOST}:${SHOP_UI_PORT}}"
 
 echo -e "\n\nRunning acceptance tests. Starting with OK load"
-for number in {1..100}; do
+for number in {1..200}; do
   mod=$((number % 10))
   if [[ "${mod}" == 0 ]]; then
     echo "Sent [${number}] requests"
@@ -20,12 +20,12 @@ sleep 10
 
 echo -e "\nGenerating KO load"
 
-for number in {1..100}; do
+for number in {1..90}; do
   mod=$((number % 10))
   if [[ "${mod}" == 0 ]]; then
     echo "Sent [${number}] requests"
   fi
-  sleep 0.2 && curl -s "http://${SHOP_UI_ADDRESS}/" > /dev/null;
+  sleep 0.5 && curl -s "http://${SHOP_UI_ADDRESS}/" > /dev/null;
 done
 
 echo -e "\nAcceptance tests done!"
