@@ -41,13 +41,13 @@
 			</encoder>
 		</appender>
 
-		<root level="DEBUG">
+		<root level="INFO">
 			<!-- IMPORTANT: make sure to include this line, otherwise the appender won't be used -->
 			<appender-ref ref="LogzioLogbackAppender"/>
 		</root>
 	</springProfile>
 
-	<root level="DEBUG">
+	<root level="INFO">
 		<appender-ref ref="CONSOLE"/>
 	</root>
 </configuration>
