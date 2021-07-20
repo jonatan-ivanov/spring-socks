@@ -2,7 +2,7 @@
 
 # https://github.com/variadico/noti
 
-sleep 5
+sleep 10
 echo '' | noti -t 'Issue Created' -m 'Socks App'
 sleep 3
 echo '' | noti -t 'Issue Created' -m 'Socks App'
