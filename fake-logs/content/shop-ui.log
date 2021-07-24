@@ -1,20 +1,20 @@
-2021-08-31 02:09:11.231 DEBUG [shop-ui,,] 1486 --- [)-192.168.0.116] javax.management.remote.rmi              : connectionId=rmi://192.168.0.116  26 unwrapping params with MBean extended ClassLoader.
-2021-08-31 02:09:11.231 DEBUG [shop-ui,,] 1486 --- [)-192.168.0.116] javax.management.remote.rmi              : connectionId=rmi://192.168.0.116  25 unwrapping params with MBean extended ClassLoader.
-2021-08-31 02:09:11.231 DEBUG [shop-ui,,] 1486 --- [)-192.168.0.116] sun.rmi.loader                           : RMI TCP Connection(2)-192.168.0.116: name = "[Ljava.lang.String;", codebase = "", defaultLoader = jdk.internal.loader.ClassLoaders$PlatformClassLoader@3e73df23
-2021-08-31 02:09:11.231 DEBUG [shop-ui,,] 1486 --- [)-192.168.0.116] sun.rmi.loader                           : RMI TCP Connection(3)-192.168.0.116: name = "[Ljava.lang.String;", codebase = "", defaultLoader = jdk.internal.loader.ClassLoaders$PlatformClassLoader@3e73df23
-2021-08-31 02:09:11.231 DEBUG [shop-ui,,] 1486 --- [)-192.168.0.116] javax.management.remote.rmi              : connectionId=rmi://192.168.0.116  25, name=org.springframework.boot:type=Endpoint,name=Health, operationName=health, signature=[]
-2021-08-31 02:09:11.231 DEBUG [shop-ui,,] 1486 --- [)-192.168.0.116] javax.management.remote.rmi              : connectionId=rmi://192.168.0.116  26, name=org.springframework.boot:type=Endpoint,name=Mappings, operationName=mappings, signature=[]
-2021-08-31 02:09:11.253 DEBUG [shop-ui,,] 1486 --- [)-192.168.0.116] sun.rmi.transport.tcp                    : RMI TCP Connection(2)-192.168.0.116: (port 50670) op = 80
-2021-08-31 02:09:11.254 DEBUG [shop-ui,,] 1486 --- [)-192.168.0.116] javax.management.remote.rmi              : [javax.management.remote.rmi.RMIConnectionImpl@17a519ac: connectionId=rmi://192.168.0.116  25] closing.
-2021-08-31 02:09:11.254 DEBUG [shop-ui,,] 1486 --- [)-192.168.0.116] javax.management.remote.rmi              : [javax.management.remote.rmi.RMIConnectionImpl@17a519ac: connectionId=rmi://192.168.0.116  25] closed.
-2021-08-31 02:09:11.266 DEBUG [shop-ui,,] 1486 --- [)-192.168.0.116] sun.rmi.transport.tcp                    : RMI TCP Connection(3)-192.168.0.116: (port 50670) op = 82
-2021-08-31 02:09:11.266 DEBUG [shop-ui,,] 1486 --- [)-192.168.0.116] sun.rmi.transport.tcp                    : RMI TCP Connection(3)-192.168.0.116: (port 50670) op = 80
-2021-08-31 02:09:11.267 DEBUG [shop-ui,,] 1486 --- [)-192.168.0.116] javax.management.remote.rmi              : [javax.management.remote.rmi.RMIConnectionImpl@21b39256: connectionId=rmi://192.168.0.116  26] closing.
-2021-08-31 02:09:11.267 DEBUG [shop-ui,,] 1486 --- [)-192.168.0.116] javax.management.remote.rmi              : [javax.management.remote.rmi.RMIConnectionImpl@21b39256: connectionId=rmi://192.168.0.116  26] closed.
-2021-08-31 02:09:11.456  INFO [shop-ui,60f2012f558e7518fb10551f93a61c3e,fb10551f93a61c3e] 1486 --- [   scheduling-1] lol.maki.socks.CatalogClient: This should work...
-2021-08-31 02:09:11.456  INFO [shop-ui,60f2012f558e7518fb10551f93a61c3e,fb10551f93a61c3e] 1486 --- [   scheduling-1] lol.maki.socks.ShopUi       : Foo Bar
-2021-08-31 02:09:11.456  INFO [shop-ui,60f2012f558e7518fb10551f93a61c3e,fb10551f93a61c3e] 1486 --- [   scheduling-1] lol.maki.socks.ShopUi       : This should not be called!
-2021-08-31 02:09:11.456  INFO [shop-ui,60f2012f558e7518fb10551f93a61c3e,fb10551f93a61c3e] 1486 --- [   scheduling-1] lol.maki.socks.ShopUi       : 1...2...3...
+2020-09-02 02:09:11.231 DEBUG [shop-ui,,] 1486 --- [)-192.168.0.116] javax.management.remote.rmi              : connectionId=rmi://192.168.0.116  26 unwrapping params with MBean extended ClassLoader.
+2020-09-02 02:09:11.231 DEBUG [shop-ui,,] 1486 --- [)-192.168.0.116] javax.management.remote.rmi              : connectionId=rmi://192.168.0.116  25 unwrapping params with MBean extended ClassLoader.
+2020-09-02 02:09:11.231 DEBUG [shop-ui,,] 1486 --- [)-192.168.0.116] sun.rmi.loader                           : RMI TCP Connection(2)-192.168.0.116: name = "[Ljava.lang.String;", codebase = "", defaultLoader = jdk.internal.loader.ClassLoaders$PlatformClassLoader@3e73df23
+2020-09-02 02:09:11.231 DEBUG [shop-ui,,] 1486 --- [)-192.168.0.116] sun.rmi.loader                           : RMI TCP Connection(3)-192.168.0.116: name = "[Ljava.lang.String;", codebase = "", defaultLoader = jdk.internal.loader.ClassLoaders$PlatformClassLoader@3e73df23
+2020-09-02 02:09:11.231 DEBUG [shop-ui,,] 1486 --- [)-192.168.0.116] javax.management.remote.rmi              : connectionId=rmi://192.168.0.116  25, name=org.springframework.boot:type=Endpoint,name=Health, operationName=health, signature=[]
+2020-09-02 02:09:11.231 DEBUG [shop-ui,,] 1486 --- [)-192.168.0.116] javax.management.remote.rmi              : connectionId=rmi://192.168.0.116  26, name=org.springframework.boot:type=Endpoint,name=Mappings, operationName=mappings, signature=[]
+2020-09-02 02:09:11.253 DEBUG [shop-ui,,] 1486 --- [)-192.168.0.116] sun.rmi.transport.tcp                    : RMI TCP Connection(2)-192.168.0.116: (port 50670) op = 80
+2020-09-02 02:09:11.254 DEBUG [shop-ui,,] 1486 --- [)-192.168.0.116] javax.management.remote.rmi              : [javax.management.remote.rmi.RMIConnectionImpl@17a519ac: connectionId=rmi://192.168.0.116  25] closing.
+2020-09-02 02:09:11.254 DEBUG [shop-ui,,] 1486 --- [)-192.168.0.116] javax.management.remote.rmi              : [javax.management.remote.rmi.RMIConnectionImpl@17a519ac: connectionId=rmi://192.168.0.116  25] closed.
+2020-09-02 02:09:11.266 DEBUG [shop-ui,,] 1486 --- [)-192.168.0.116] sun.rmi.transport.tcp                    : RMI TCP Connection(3)-192.168.0.116: (port 50670) op = 82
+2020-09-02 02:09:11.266 DEBUG [shop-ui,,] 1486 --- [)-192.168.0.116] sun.rmi.transport.tcp                    : RMI TCP Connection(3)-192.168.0.116: (port 50670) op = 80
+2020-09-02 02:09:11.267 DEBUG [shop-ui,,] 1486 --- [)-192.168.0.116] javax.management.remote.rmi              : [javax.management.remote.rmi.RMIConnectionImpl@21b39256: connectionId=rmi://192.168.0.116  26] closing.
+2020-09-02 02:09:11.267 DEBUG [shop-ui,,] 1486 --- [)-192.168.0.116] javax.management.remote.rmi              : [javax.management.remote.rmi.RMIConnectionImpl@21b39256: connectionId=rmi://192.168.0.116  26] closed.
+2020-09-02 02:09:11.456  INFO [shop-ui,60f2012f558e7518fb10551f93a61c3e,fb10551f93a61c3e] 1486 --- [   scheduling-1] lol.maki.socks.CatalogClient: This should work...
+2020-09-02 02:09:11.456  INFO [shop-ui,60f2012f558e7518fb10551f93a61c3e,fb10551f93a61c3e] 1486 --- [   scheduling-1] lol.maki.socks.ShopUi       : Foo Bar
+2020-09-02 02:09:11.456  INFO [shop-ui,60f2012f558e7518fb10551f93a61c3e,fb10551f93a61c3e] 1486 --- [   scheduling-1] lol.maki.socks.ShopUi       : This should not be called!
+2020-09-02 02:09:11.456  INFO [shop-ui,60f2012f558e7518fb10551f93a61c3e,fb10551f93a61c3e] 1486 --- [   scheduling-1] lol.maki.socks.ShopUi       : 1...2...3...
 
    _____            _                _____            _        
   / ____|          (_)              / ____|          | |       
@@ -26,13 +26,13 @@
         |_|                 |___/                              
 
 
-2021-08-31 02:09:11.724 DEBUG [shop-ui,,] 1486 --- [tClientSender-0] s.n.www.protocol.http.HttpURLConnection  : sun.net.www.MessageHeader@60493fad9 pairs: {POST /report?f=trace HTTP/1.1: null}{Content-Type: application/octet-stream}{Content-Encoding: gzip}{Authorization: Bearer 7f23a58a-56b2-4aa9-aad3-a98a075c3d84}{User-Agent: Java/16.0.1}{Host: demo.wavefront.com}{Accept: text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2}{Connection: keep-alive}{Content-Length: 215}
-2021-08-31 02:09:11.761 DEBUG [shop-ui,,] 1486 --- [tClientSender-0] s.n.www.protocol.http.HttpURLConnection  : sun.net.www.MessageHeader@7a25129f5 pairs: {null: HTTP/1.1 202 Accepted}{Server: nginx}{Date: Fri, 16 Jul 2021 21:58:43 GMT}{Transfer-Encoding: chunked}{Connection: keep-alive}
-2021-08-31 02:09:16.458  INFO [shop-ui,60f201348feddaba4ca490264fc943e9,4ca490264fc943e9] 1486 --- [   scheduling-1] lol.maki.socks.ShopUi       : Foo Bar
-2021-08-31 02:09:16.458  INFO [shop-ui,60f201348feddaba4ca490264fc943e9,4ca490264fc943e9] 1486 --- [   scheduling-1] lol.maki.socks.ShopUi       : 1...2...3...
-2021-08-31 02:09:16.458  INFO [shop-ui,60f201348feddaba4ca490264fc943e9,4ca490264fc943e9] 1486 --- [   scheduling-1] lol.maki.socks.ShopUi       : This should not be called!
-2021-08-31 02:09:16.458  INFO [shop-ui,60f201348feddaba4ca490264fc943e9,4ca490264fc943e9] 1486 --- [   scheduling-1] lol.maki.socks.CatalogClient: This should work...
-2021-08-31 02:09:16.542 ERROR [shop-ui,60f204644e95908f669471d1f2879460,669471d1f2879460] 4121 --- [     parallel-7] lol.maki.socks.CatalogClient: Unable to fetch socks
+2020-09-02 02:09:11.724 DEBUG [shop-ui,,] 1486 --- [tClientSender-0] s.n.www.protocol.http.HttpURLConnection  : sun.net.www.MessageHeader@60493fad9 pairs: {POST /report?f=trace HTTP/1.1: null}{Content-Type: application/octet-stream}{Content-Encoding: gzip}{Authorization: Bearer 7f23a58a-56b2-4aa9-aad3-a98a075c3d84}{User-Agent: Java/16.0.1}{Host: demo.wavefront.com}{Accept: text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2}{Connection: keep-alive}{Content-Length: 215}
+2020-09-02 02:09:11.761 DEBUG [shop-ui,,] 1486 --- [tClientSender-0] s.n.www.protocol.http.HttpURLConnection  : sun.net.www.MessageHeader@7a25129f5 pairs: {null: HTTP/1.1 202 Accepted}{Server: nginx}{Transfer-Encoding: chunked}{Connection: keep-alive}
+2020-09-02 02:09:16.458  INFO [shop-ui,60f201348feddaba4ca490264fc943e9,4ca490264fc943e9] 1486 --- [   scheduling-1] lol.maki.socks.ShopUi       : Foo Bar
+2020-09-02 02:09:16.458  INFO [shop-ui,60f201348feddaba4ca490264fc943e9,4ca490264fc943e9] 1486 --- [   scheduling-1] lol.maki.socks.ShopUi       : 1...2...3...
+2020-09-02 02:09:16.458  INFO [shop-ui,60f201348feddaba4ca490264fc943e9,4ca490264fc943e9] 1486 --- [   scheduling-1] lol.maki.socks.ShopUi       : This should not be called!
+2020-09-02 02:09:16.458  INFO [shop-ui,60f201348feddaba4ca490264fc943e9,4ca490264fc943e9] 1486 --- [   scheduling-1] lol.maki.socks.CatalogClient: This should work...
+2020-09-02 02:09:16.542 ERROR [shop-ui,60f204644e95908f669471d1f2879460,669471d1f2879460] 4121 --- [     parallel-7] lol.maki.socks.CatalogClient: Unable to fetch socks
 java.util.concurrent.TimeoutException: Did not observe any item or terminal signal within 3000ms in 'flatMapMany' (and no fallback has been configured)
 	at reactor.core.publisher.FluxTimeout$TimeoutMainSubscriber.handleTimeout(FluxTimeout.java:294)
 	at reactor.core.publisher.FluxTimeout$TimeoutMainSubscriber.doTimeout(FluxTimeout.java:279)
@@ -68,10 +68,10 @@ java.util.concurrent.TimeoutException: Did not observe any item or terminal sign
         /88:.__ ,       _%-' ---  -  
             '''::===..-'   =  --.
 
-2021-08-31 02:09:16.724 DEBUG [shop-ui,,] 1486 --- [tClientSender-0] s.n.www.protocol.http.HttpURLConnection  : sun.net.www.MessageHeader@3f2bc7819 pairs: {POST /report?f=trace HTTP/1.1: null}{Content-Type: application/octet-stream}{Content-Encoding: gzip}{Authorization: Bearer 7f23a58a-56b2-4aa9-aad3-a98a075c3d84}{User-Agent: Java/16.0.1}{Host: demo.wavefront.com}{Accept: text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2}{Connection: keep-alive}{Content-Length: 274}
-2021-08-31 02:09:16.777 DEBUG [shop-ui,,] 1486 --- [tClientSender-0] s.n.www.protocol.http.HttpURLConnection  : sun.net.www.MessageHeader@57e12e0d5 pairs: {null: HTTP/1.1 202 Accepted}{Server: nginx}{Date: Fri, 16 Jul 2021 21:58:48 GMT}{Transfer-Encoding: chunked}{Connection: keep-alive}
-2021-08-31 02:09:21.458  INFO [shop-ui,60f201391ffb0905f065516d872bdb68,f065516d872bdb68] 1486 --- [   scheduling-1] lol.maki.socks.ShopUi       : This should not be called!
-2021-08-31 02:09:21.458  INFO [shop-ui,60f201391ffb0905f065516d872bdb68,f065516d872bdb68] 1486 --- [   scheduling-1] lol.maki.socks.ShopUi       : 1...2...3...
+2020-09-02 02:09:16.724 DEBUG [shop-ui,,] 1486 --- [tClientSender-0] s.n.www.protocol.http.HttpURLConnection  : sun.net.www.MessageHeader@3f2bc7819 pairs: {POST /report?f=trace HTTP/1.1: null}{Content-Type: application/octet-stream}{Content-Encoding: gzip}{Authorization: Bearer 7f23a58a-56b2-4aa9-aad3-a98a075c3d84}{User-Agent: Java/16.0.1}{Host: demo.wavefront.com}{Accept: text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2}{Connection: keep-alive}{Content-Length: 274}
+2020-09-02 02:09:16.777 DEBUG [shop-ui,,] 1486 --- [tClientSender-0] s.n.www.protocol.http.HttpURLConnection  : sun.net.www.MessageHeader@57e12e0d5 pairs: {null: HTTP/1.1 202 Accepted}{Server: nginx}{Transfer-Encoding: chunked}{Connection: keep-alive}
+2020-09-02 02:09:21.458  INFO [shop-ui,60f201391ffb0905f065516d872bdb68,f065516d872bdb68] 1486 --- [   scheduling-1] lol.maki.socks.ShopUi       : This should not be called!
+2020-09-02 02:09:21.458  INFO [shop-ui,60f201391ffb0905f065516d872bdb68,f065516d872bdb68] 1486 --- [   scheduling-1] lol.maki.socks.ShopUi       : 1...2...3...
 
                     /\
                    //\\
@@ -115,12 +115,12 @@ java.util.concurrent.TimeoutException: Did not observe any item or terminal sign
                    \\//
                     \/
 
-2021-08-31 02:09:21.459  INFO [shop-ui,60f201391ffb0905f065516d872bdb68,f065516d872bdb68] 1486 --- [   scheduling-1] lol.maki.socks.CatalogClient: This should work...
-2021-08-31 02:09:21.459  INFO [shop-ui,60f201391ffb0905f065516d872bdb68,f065516d872bdb68] 1486 --- [   scheduling-1] lol.maki.socks.ShopUi       : Foo Bar
-2021-08-31 02:09:21.724 DEBUG [shop-ui,,] 1486 --- [tClientSender-0] s.n.www.protocol.http.HttpURLConnection  : sun.net.www.MessageHeader@7e7cc70b9 pairs: {POST /report?f=trace HTTP/1.1: null}{Content-Type: application/octet-stream}{Content-Encoding: gzip}{Authorization: Bearer 7f23a58a-56b2-4aa9-aad3-a98a075c3d84}{User-Agent: Java/16.0.1}{Host: demo.wavefront.com}{Accept: text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2}{Connection: keep-alive}{Content-Length: 215}
-2021-08-31 02:09:21.763 DEBUG [shop-ui,,] 1486 --- [tClientSender-0] s.n.www.protocol.http.HttpURLConnection  : sun.net.www.MessageHeader@2c1f93b15 pairs: {null: HTTP/1.1 202 Accepted}{Server: nginx}{Date: Fri, 16 Jul 2021 21:58:53 GMT}{Transfer-Encoding: chunked}{Connection: keep-alive}
-2021-08-31 02:09:26.459  INFO [shop-ui,60f2013e12d86a0d56dd214dedf5a02b,56dd214dedf5a02b] 1486 --- [   scheduling-1] lol.maki.socks.ShopUi       : This should not be called!
-2021-08-31 02:09:26.459  INFO [shop-ui,60f2013e12d86a0d56dd214dedf5a02b,56dd214dedf5a02b] 1486 --- [   scheduling-1] lol.maki.socks.CatalogClient: This should work...
+2020-09-02 02:09:21.459  INFO [shop-ui,60f201391ffb0905f065516d872bdb68,f065516d872bdb68] 1486 --- [   scheduling-1] lol.maki.socks.CatalogClient: This should work...
+2020-09-02 02:09:21.459  INFO [shop-ui,60f201391ffb0905f065516d872bdb68,f065516d872bdb68] 1486 --- [   scheduling-1] lol.maki.socks.ShopUi       : Foo Bar
+2020-09-02 02:09:21.724 DEBUG [shop-ui,,] 1486 --- [tClientSender-0] s.n.www.protocol.http.HttpURLConnection  : sun.net.www.MessageHeader@7e7cc70b9 pairs: {POST /report?f=trace HTTP/1.1: null}{Content-Type: application/octet-stream}{Content-Encoding: gzip}{Authorization: Bearer 7f23a58a-56b2-4aa9-aad3-a98a075c3d84}{User-Agent: Java/16.0.1}{Host: demo.wavefront.com}{Accept: text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2}{Connection: keep-alive}{Content-Length: 215}
+2020-09-02 02:09:21.763 DEBUG [shop-ui,,] 1486 --- [tClientSender-0] s.n.www.protocol.http.HttpURLConnection  : sun.net.www.MessageHeader@2c1f93b15 pairs: {null: HTTP/1.1 202 Accepted}{Server: nginx}{Transfer-Encoding: chunked}{Connection: keep-alive}
+2020-09-02 02:09:26.459  INFO [shop-ui,60f2013e12d86a0d56dd214dedf5a02b,56dd214dedf5a02b] 1486 --- [   scheduling-1] lol.maki.socks.ShopUi       : This should not be called!
+2020-09-02 02:09:26.459  INFO [shop-ui,60f2013e12d86a0d56dd214dedf5a02b,56dd214dedf5a02b] 1486 --- [   scheduling-1] lol.maki.socks.CatalogClient: This should work...
 
    _____            _                _____            _        
   / ____|          (_)              / ____|          | |       
@@ -132,9 +132,9 @@ java.util.concurrent.TimeoutException: Did not observe any item or terminal sign
         |_|                 |___/                              
 
 
-2021-08-31 02:09:26.459  INFO [shop-ui,60f2013e12d86a0d56dd214dedf5a02b,56dd214dedf5a02b] 1486 --- [   scheduling-1] lol.maki.socks.ShopUi       : 1...2...3...
-2021-08-31 02:09:26.459  INFO [shop-ui,60f2013e12d86a0d56dd214dedf5a02b,56dd214dedf5a02b] 1486 --- [   scheduling-1] lol.maki.socks.ShopUi       : Foo Bar
-2021-08-31 02:09:26.460 ERROR [shop-ui,,] 1486 --- [   scheduling-1] o.s.s.s.TaskUtils$LoggingErrorHandler    : Unexpected error occurred in scheduled task
+2020-09-02 02:09:26.459  INFO [shop-ui,60f2013e12d86a0d56dd214dedf5a02b,56dd214dedf5a02b] 1486 --- [   scheduling-1] lol.maki.socks.ShopUi       : 1...2...3...
+2020-09-02 02:09:26.459  INFO [shop-ui,60f2013e12d86a0d56dd214dedf5a02b,56dd214dedf5a02b] 1486 --- [   scheduling-1] lol.maki.socks.ShopUi       : Foo Bar
+2020-09-02 02:09:26.460 ERROR [shop-ui,,] 1486 --- [   scheduling-1] o.s.s.s.TaskUtils$LoggingErrorHandler    : Unexpected error occurred in scheduled task
 
 lol.maki.socks.catalog.SockNotFoundException: Sock Not Found!
 
@@ -186,9 +186,9 @@ DO NOT IGNORE THE FOLLOWING TEXT:
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
 	at java.base/java.lang.Thread.run(Thread.java:831)
 
-2021-08-31 02:09:26.726 DEBUG [shop-ui,,] 1486 --- [tClientSender-0] s.n.www.protocol.http.HttpURLConnection  : sun.net.www.MessageHeader@4de95e7c9 pairs: {POST /report?f=trace HTTP/1.1: null}{Content-Type: application/octet-stream}{Content-Encoding: gzip}{Authorization: Bearer 7f23a58a-56b2-4aa9-aad3-a98a075c3d84}{User-Agent: Java/16.0.1}{Host: demo.wavefront.com}{Accept: text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2}{Connection: keep-alive}{Content-Length: 276}
-2021-08-31 02:09:26.758 DEBUG [shop-ui,,] 1486 --- [tClientSender-0] s.n.www.protocol.http.HttpURLConnection  : sun.net.www.MessageHeader@1326808a5 pairs: {null: HTTP/1.1 202 Accepted}{Server: nginx}{Date: Fri, 16 Jul 2021 21:58:58 GMT}{Transfer-Encoding: chunked}{Connection: keep-alive}
-2021-08-31 02:09:27.456  INFO [shop-ui,60f2012f558e7518fb10551f93a61c3e,fb10551f93a61c3e] 1486 --- [   scheduling-1] lol.maki.socks.CatalogClient: This should work...
-2021-08-31 02:09:27.456  INFO [shop-ui,60f2012f558e7518fb10551f93a61c3e,fb10551f93a61c3e] 1486 --- [   scheduling-1] lol.maki.socks.ShopUi       : Foo Bar
-2021-08-31 02:09:27.456  INFO [shop-ui,60f2012f558e7518fb10551f93a61c3e,fb10551f93a61c3e] 1486 --- [   scheduling-1] lol.maki.socks.ShopUi       : This should not be called!
-2021-08-31 02:09:27.456  INFO [shop-ui,60f2012f558e7518fb10551f93a61c3e,fb10551f93a61c3e] 1486 --- [   scheduling-1] lol.maki.socks.ShopUi       : 1...2...3...
+2020-09-02 02:09:26.726 DEBUG [shop-ui,,] 1486 --- [tClientSender-0] s.n.www.protocol.http.HttpURLConnection  : sun.net.www.MessageHeader@4de95e7c9 pairs: {POST /report?f=trace HTTP/1.1: null}{Content-Type: application/octet-stream}{Content-Encoding: gzip}{Authorization: Bearer 7f23a58a-56b2-4aa9-aad3-a98a075c3d84}{User-Agent: Java/16.0.1}{Host: demo.wavefront.com}{Accept: text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2}{Connection: keep-alive}{Content-Length: 276}
+2020-09-02 02:09:26.758 DEBUG [shop-ui,,] 1486 --- [tClientSender-0] s.n.www.protocol.http.HttpURLConnection  : sun.net.www.MessageHeader@1326808a5 pairs: {null: HTTP/1.1 202 Accepted}{Server: nginx}{Transfer-Encoding: chunked}{Connection: keep-alive}
+2020-09-02 02:09:27.456  INFO [shop-ui,60f2012f558e7518fb10551f93a61c3e,fb10551f93a61c3e] 1486 --- [   scheduling-1] lol.maki.socks.CatalogClient: This should work...
+2020-09-02 02:09:27.456  INFO [shop-ui,60f2012f558e7518fb10551f93a61c3e,fb10551f93a61c3e] 1486 --- [   scheduling-1] lol.maki.socks.ShopUi       : Foo Bar
+2020-09-02 02:09:27.456  INFO [shop-ui,60f2012f558e7518fb10551f93a61c3e,fb10551f93a61c3e] 1486 --- [   scheduling-1] lol.maki.socks.ShopUi       : This should not be called!
+2020-09-02 02:09:27.456  INFO [shop-ui,60f2012f558e7518fb10551f93a61c3e,fb10551f93a61c3e] 1486 --- [   scheduling-1] lol.maki.socks.ShopUi       : 1...2...3...
