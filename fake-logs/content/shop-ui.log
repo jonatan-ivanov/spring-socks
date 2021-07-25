@@ -121,7 +121,7 @@ java.util.concurrent.TimeoutException: Did not observe any item or terminal sign
 
 2021-09-02 02:09:26.459  INFO [shop-ui,60f2013e12d86a0d56dd214dedf5a02b,56dd214dedf5a02b] 1486 --- [   scheduling-1] lol.maki.socks.ShopUi       : 1...2...3...
 2021-09-02 02:09:26.459  INFO [shop-ui,60f2013e12d86a0d56dd214dedf5a02b,56dd214dedf5a02b] 1486 --- [   scheduling-1] lol.maki.socks.ShopUi       : Foo Bar
-2021-09-02 02:09:26.460 ERROR [shop-ui,,] 1486 --- [   scheduling-1] o.s.s.s.TaskUtils$LoggingErrorHandler    : Unexpected error occurred in scheduled task
+2021-09-02 02:09:26.460  WARN [shop-ui,,] 1486 --- [   scheduling-1] o.s.s.s.TaskUtils$LoggingErrorHandler    : Unexpected error occurred in scheduled task
 
 lol.maki.socks.catalog.SockNotFoundException: Sock Not Found!
 
