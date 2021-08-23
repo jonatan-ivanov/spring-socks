@@ -64,7 +64,7 @@ rm -rf /tmp/logzio-logback-queue
 
 echo -e "\nStarting the rest of the apps"
 nohup ${JAVA} ${MEM_ARGS} -jar cart-api/target/*.jar --debug --server.port="${CART_API_PORT}" ${TOKENS} > target/cart-api.log 2>&1 &
-nohup ${JAVA} ${MEM_ARGS} -jar catalog-api/target/*.jar --debug --server.port="${CATALOG_API_PORT}" ${TOKENS} > target/catalog-api.log 2>&1 &
+nohup ${JAVA} -Xmx512M -Xss1024k -jar catalog-api/target/*.jar --debug --server.port="${CATALOG_API_PORT}" ${TOKENS} > target/catalog-api.log 2>&1 &
 nohup ${JAVA} ${MEM_ARGS} -jar order-api/target/*.jar --debug --server.port="${ORDER_API_PORT}" ${TOKENS} > target/order-api.log 2>&1 &
 nohup ${JAVA} ${MEM_ARGS} -jar payment-api/target/*.jar --debug --server.port="${PAYMENT_API_PORT}" ${TOKENS} > target/payment-api.log 2>&1 &
 nohup ${JAVA} ${MEM_ARGS} -jar shipping-api/target/*.jar --debug --server.port="${SHIPPING_API_PORT}" ${TOKENS} > target/shipping-api.log 2>&1 &
